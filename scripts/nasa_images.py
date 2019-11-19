@@ -22,3 +22,9 @@ for img in imgs:
     if not os.path.exists(filename):
         urllib.request.urlretrieve(map_img.a.get('href'), filename)
                                 
+#scrolling further through the webpage to get more images
+for i in range(2, 3):
+    site = 'https://earthobservatory.nasa.gov/topic/image-of-the-day/getRecords?page=' + str(i)
+    page = urllib.request.urlopen(site).read()
+    soup = bs(page, features= "html.parser")
+    print(soup.data)
