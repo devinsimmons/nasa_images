@@ -17,8 +17,8 @@ for img in imgs:
     soup.prettify()
     
     map_img = soup.findAll('div', {'class': 'panel-image'})[0]
-    filename = r"C:\Users\devin.simmons.ctr\Desktop\projects\nasa_images\images\\" + map_img.a.img.get('src').split('/')[-1]
+    filename = r"C:\Users\devin.simmons.ctr\Desktop\projects\nasa_images\images\\" + map_img.a.get('href').split('/')[-1]
     
     if not os.path.exists(filename):
-        urllib.request.urlretrieve(map_img.a.img.get('src'), filename)
+        urllib.request.urlretrieve(map_img.a.get('href'), filename)
                                 
