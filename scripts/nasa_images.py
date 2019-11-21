@@ -42,6 +42,7 @@ for i in range(3, 30):
         soup.prettify()
         
         map_img = soup.findAll('div', {'class': 'panel-image'})[0]
+        #handles exceptions to the normal format
         if map_img.a:
             filename = r"C:\Users\devin.simmons.ctr\Desktop\projects\nasa_images\images\\" + map_img.a.get('href').split('/')[-1]
         
